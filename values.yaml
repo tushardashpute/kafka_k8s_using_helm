@@ -1,0 +1,23 @@
+provisioning:
+  ## @param provisioning.enabled Enable kafka provisioning Job
+  ##
+  enabled: false
+  ## @param provisioning.automountServiceAccountToken Mount Service Account token in pod
+  ##
+  automountServiceAccountToken: false
+  ## @param provisioning.numPartitions Default number of partitions for topics when unspecified
+  ##
+  numPartitions: 1
+  ## @param provisioning.replicationFactor Default replication factor for topics when unspecified
+  ##
+  replicationFactor: 1
+  ## @param provisioning.topics Kafka topics to provision
+  ## - name: topic-name
+  ##   partitions: 1
+  ##   replicationFactor: 1
+  ##   ## https://kafka.apache.org/documentation/#topicconfigs
+  ##   config:
+  ##     max.message.bytes: 64000
+  ##     flush.messages: 1
+  ##
+  topics: [test]
