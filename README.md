@@ -5,6 +5,11 @@ Prerequisite
 
 Running EKS/AKS cluster.
 
+Note: If you done have EBS-CSI add on please add it:
+
+      eksctl create addon --name aws-ebs-csi-driver --cluster eksdemo --service-account-role-arn arn:aws:iam::176886134554:role/AmazonEKS_EBS_CSI_DriverRole --force --region us-east-1
+
+
 Steps:
 1. Install kafka cluster using helm chart
 
