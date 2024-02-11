@@ -27,7 +27,7 @@ Steps:
 3. Create a pod that you can use as a Kafka client run the following commands:
         
             kubectl run my-kafka-client --restart='Never' --image docker.io/bitnami/kafka:3.6.1-debian-11-r6 --namespace default --command -- sleep infinity
-            kubectl cp --namespace default /path/to/client.properties my-kafka-client:/tmp/client.properties
+            kubectl cp --namespace default client.properties  my-kafka-client:/tmp/client.properties
             kubectl exec --tty -i my-kafka-client --namespace default -- bash
 
 4. PRODUCER:
