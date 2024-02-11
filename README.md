@@ -7,6 +7,7 @@ Running EKS/AKS cluster.
 
 Note: If you done have EBS-CSI add on please add it:
 
+      eksctl create iamserviceaccount     --name ebs-csi-controller-sa     --namespace kube-system     --cluster eksdemo     --role-name AmazonEKS_EBS_CSI_DriverRole     --role-only     --attach-policy-arn arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy     --approve
       eksctl create addon --name aws-ebs-csi-driver --cluster eksdemo --service-account-role-arn arn:aws:iam::176886134554:role/AmazonEKS_EBS_CSI_DriverRole --force --region us-east-1
 
 
