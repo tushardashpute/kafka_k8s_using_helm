@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kafka-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: ac5f6dba19e354897bc8dcc9a99fca11-1888313455.us-east-1.elb.amazonaws.com  # Replace with your actual domain
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: my-kafka-controller-0-external  # Replace with your Kafka controller service name
+            port:
+              number: 9094
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: my-kafka-controller-1-external  # Replace with your Kafka controller service name
+            port:
+              number: 9094
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: my-kafka-controller-2-external  # Replace with your Kafka controller service name
+            port:
+              number: 9094
